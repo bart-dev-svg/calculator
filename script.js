@@ -13,7 +13,11 @@ for (const button of buttons) {
         } else if (value === "=") {
       const result = calculate(current);
       display.textContent = result;
-      current = String(result);
+            if (result === "Error") {
+        current = "";
+      } else {
+        current = String(result);
+      }
     } else {
       current = current + value;
       display.textContent = current;
